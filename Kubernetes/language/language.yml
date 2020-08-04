@@ -73,7 +73,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-     app: language-frontend
+     app: language
   template:
     metadata:
       labels:
