@@ -16,12 +16,15 @@ spec:
     protocol: TCP
 ---
 # A deployment declaratively indicating how many instances of the .net frontend app container we want up
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: language-frontend
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+     app: language-frontend
   template:
     metadata:
       labels:
@@ -62,12 +65,15 @@ spec:
     protocol: TCP
 ---
 # A deployment declaratively indicating how many instances of the cognitive-service container we want up
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: language
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+     app: language
   template:
     metadata:
       labels:
